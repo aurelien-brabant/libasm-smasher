@@ -6,7 +6,7 @@
 /*   By: abrabant <abrabant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 12:16:04 by abrabant          #+#    #+#             */
-/*   Updated: 2021/04/10 22:39:47 by abrabant         ###   ########.fr       */
+/*   Updated: 2021/04/10 22:53:32 by abrabant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,6 @@ int	main(void)
 	};
 	size_t		i = 0;
 	size_t		modules_passed = 0;
-
-	save_preserved_reg();
 
 	/* create log folder */
 	remove("./log");

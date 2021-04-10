@@ -6,7 +6,7 @@
 /*   By: abrabant <abrabant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 15:09:48 by abrabant          #+#    #+#             */
-/*   Updated: 2021/04/10 22:02:25 by abrabant         ###   ########.fr       */
+/*   Updated: 2021/04/10 22:43:32 by abrabant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	module_ft_write(t_module *module)
 	char syscmd[50] = { 0 };
 
 	for (size_t i = 0, length = sizeof (strings) / sizeof (char *); i < length; ++i) {
+		save_preserved_reg();
 		errno = 0;
 		if (strcmp(strings[i], "invalid_fd") == 0)
 			write(WRONG_FD, strings[i], strlen(strings[i]));
