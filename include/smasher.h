@@ -6,7 +6,7 @@
 /*   By: abrabant <abrabant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 09:06:20 by abrabant          #+#    #+#             */
-/*   Updated: 2021/04/10 12:48:30 by abrabant         ###   ########.fr       */
+/*   Updated: 2021/04/10 13:52:26 by abrabant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ void	smash_end_module(t_module *module);
 
 void	module_ft_strlen(t_module *module);
 void	module_ft_strcmp(t_module *module);
+void	module_ft_strcpy(t_module *module);
 
 # endif
