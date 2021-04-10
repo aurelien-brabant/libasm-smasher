@@ -31,7 +31,7 @@ You can copy paste the following command, assuming that you're at the root of yo
 `libasm`'s repository:
 
 ```bash
-git clone https://github.com/aurelien-brabant/libasm-smasher && make && ./smasher
+git clone https://github.com/aurelien-brabant/libasm-smasher && cd libasm-smasher && make && ./smasher
 ```
 If you want to specify another path for your `libasm`, feel free to `make` the smasher
 using the `make LIBASM_PATH=path/to/your/libasm` syntax. It will override the default

@@ -1,4 +1,4 @@
-LIBASM_PATH	= ../libasm
+LIBASM_PATH	= ../
 
 NASM		= nasm
 ASM_FLAGS	= -felf64 -g
