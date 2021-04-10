@@ -1,6 +1,7 @@
 NASM		= nasm
 ASM_FLAGS	= -felf64 -g
-LD			= clang -g
+LD			= clang -g 
+LD_FLAGS	= -L$(LIBASM_PATH) -lasm
 CC			= clang -g -Iinclude 
 CFLAGS		= -Wall -Werror -Wextra
 RM			= /bin/rm -rf 
@@ -15,7 +16,7 @@ TARGET		= smasher
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
-	$(LD) $(OBJS) -o $(TARGET)
+	$(LD) $(OBJS) $(LD_FLAGS) -o $(TARGET)
 
 clean:
 	$(RM) $(OBJS)

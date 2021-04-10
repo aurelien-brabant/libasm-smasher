@@ -6,7 +6,7 @@
 /*   By: abrabant <abrabant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 15:09:48 by abrabant          #+#    #+#             */
-/*   Updated: 2021/04/10 19:49:31 by abrabant         ###   ########.fr       */
+/*   Updated: 2021/04/10 22:02:55 by abrabant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	module_ft_read(t_module *module)
 		ref_errno = errno;
 		lseek(fd, SEEK_SET, 0);
 		/* put the file's content in actual buffer */ 
-		while ((actual_ret = read(fd, actual, READ_SIZE)) > 0)
+		while ((actual_ret = ft_read(fd, actual, READ_SIZE)) > 0)
 			actual_read += actual_ret;
 		actual_errno = errno;
 

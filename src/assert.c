@@ -6,7 +6,7 @@
 /*   By: abrabant <abrabant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 10:30:25 by abrabant          #+#    #+#             */
-/*   Updated: 2021/04/10 12:27:11 by abrabant         ###   ########.fr       */
+/*   Updated: 2021/04/10 22:27:54 by abrabant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,6 @@ void	smash_end_module(t_module *module)
 	printf("\n***** \033[1;34m   MODULE SUMMARY    \033[0m*****\n");
 	printf("MODULE: \033[0;35m%s\033[0m\n", module->name);
 	printf("TOTAL : %ld/%ld passed.\n", module->passed, module->tested);
-	printf("ERRORS: \033[1;31m%ld\033[0m\n", module->errors);
+	printf("ERRORS: %s%ld\033[0m\n", module->errors == 0 ? "\033[1;32m" : "\033[1;31m", module->errors);
 	printf("***** \033[1;39mEND OF MODULE SUMMARY \033[0m*****\n");
 }

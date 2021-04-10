@@ -6,7 +6,7 @@
 /*   By: abrabant <abrabant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 13:15:49 by abrabant          #+#    #+#             */
-/*   Updated: 2021/04/10 14:09:46 by abrabant         ###   ########.fr       */
+/*   Updated: 2021/04/10 22:03:27 by abrabant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	module_ft_strcpy(t_module *module)
 
 	for (size_t i = 0, length = sizeof (srcs) / sizeof (char *); i < length; ++i) {
 		strcpy(expected_dst, srcs[i]);
-		actual_ret = strcpy(actual_dst, srcs[i]);
+		actual_ret = ft_strcpy(actual_dst, srcs[i]);
 
 		/* test return value */
 		if (actual_ret != actual_dst)

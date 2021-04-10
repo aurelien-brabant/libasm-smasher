@@ -6,7 +6,7 @@
 /*   By: abrabant <abrabant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 11:27:23 by abrabant          #+#    #+#             */
-/*   Updated: 2021/04/10 13:02:46 by abrabant         ###   ########.fr       */
+/*   Updated: 2021/04/10 22:04:02 by abrabant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	module_ft_strcmp(t_module *module)
 	};
 	/* Iterate over each test string, call the true function and the wrong one, and see if there's a difference */
 	for (size_t i = 0, length = sizeof (strings) / sizeof (char *[2]); i < length; ++i) {
-		size_t	actual = strcmp(strings[i][0], strings[i][1]);
+		size_t	actual = ft_strcmp(strings[i][0], strings[i][1]);
 		size_t	expected = strcmp(strings[i][0], strings[i][1]);
 
 		/* if sign is not the same, smash! */
