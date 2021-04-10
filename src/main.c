@@ -6,7 +6,7 @@
 /*   By: abrabant <abrabant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 12:16:04 by abrabant          #+#    #+#             */
-/*   Updated: 2021/04/10 17:47:13 by abrabant         ###   ########.fr       */
+/*   Updated: 2021/04/10 19:24:09 by abrabant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int	main(void)
 	/* Run test modules */
 	while (module[i].module_handler != NULL)
 	{
+		printf("\n> STARTING TEST MODULE \"\033[1;34m%s\033[0m\"...\n", module[i].name);
 		module[i].module_handler(&module[i]);	
 		if (module[i].errors == 0)
 			++modules_passed;
