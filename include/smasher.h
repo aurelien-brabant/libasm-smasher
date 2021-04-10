@@ -6,7 +6,7 @@
 /*   By: abrabant <abrabant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 09:06:20 by abrabant          #+#    #+#             */
-/*   Updated: 2021/04/10 12:11:02 by abrabant         ###   ########.fr       */
+/*   Updated: 2021/04/10 12:48:30 by abrabant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ bool	smash_assert_reg(t_module *module);
 void	smash_end_module(t_module *module);
 
 void	module_ft_strlen(t_module *module);
+void	module_ft_strcmp(t_module *module);
 
 # endif

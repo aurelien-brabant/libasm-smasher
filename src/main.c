@@ -6,7 +6,7 @@
 /*   By: abrabant <abrabant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 12:16:04 by abrabant          #+#    #+#             */
-/*   Updated: 2021/04/10 12:31:21 by abrabant         ###   ########.fr       */
+/*   Updated: 2021/04/10 12:52:22 by abrabant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,13 @@ int	main(void)
 			0, 0, 0
 		},
 		{
-			"ft_strlen",
-			module_ft_strlen,
+			"ft_strcmp",
+			module_ft_strcmp,
+			0, 0, 0
+		},
+		{
+			"",
+			NULL,
 			0, 0, 0
 		}
 	};
