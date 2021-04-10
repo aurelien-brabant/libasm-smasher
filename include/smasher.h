@@ -6,7 +6,7 @@
 /*   By: abrabant <abrabant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 09:06:20 by abrabant          #+#    #+#             */
-/*   Updated: 2021/04/10 14:42:21 by abrabant         ###   ########.fr       */
+/*   Updated: 2021/04/10 17:47:23 by abrabant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ void	module_ft_strlen(t_module *module);
 void	module_ft_strcmp(t_module *module);
 void	module_ft_strcpy(t_module *module);
 void	module_ft_strdup(t_module *module);
+void	module_ft_read(t_module *module);
 
 # endif
