@@ -6,11 +6,12 @@
 /*   By: abrabant <abrabant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 12:16:04 by abrabant          #+#    #+#             */
-/*   Updated: 2021/04/10 20:15:14 by abrabant         ###   ########.fr       */
+/*   Updated: 2021/04/10 22:39:47 by abrabant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <sys/stat.h>
 #include "smasher.h"
 
 int	main(void)
@@ -56,6 +57,10 @@ int	main(void)
 	size_t		modules_passed = 0;
 
 	save_preserved_reg();
+
+	/* create log folder */
+	remove("./log");
+	mkdir("./log", 0777);
 
 	/* Run test modules */
 	while (module[i].module_handler != NULL)
