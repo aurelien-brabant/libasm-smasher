@@ -6,7 +6,7 @@
 /*   By: abrabant <abrabant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 09:06:20 by abrabant          #+#    #+#             */
-/*   Updated: 2021/04/10 17:47:23 by abrabant         ###   ########.fr       */
+/*   Updated: 2021/04/10 20:15:51 by abrabant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <stdint.h>
 # include <stddef.h>
 # include <stdbool.h>
-# define MODULE_MAX 5
+# define MODULE_MAX 30
 
 typedef struct s_module
 {
@@ -49,5 +49,6 @@ void	module_ft_strcmp(t_module *module);
 void	module_ft_strcpy(t_module *module);
 void	module_ft_strdup(t_module *module);
 void	module_ft_read(t_module *module);
+void	module_ft_write(t_module *module);
 
 # endif
