@@ -6,7 +6,7 @@
 /*   By: abrabant <abrabant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 15:09:48 by abrabant          #+#    #+#             */
-/*   Updated: 2021/04/10 22:43:32 by abrabant         ###   ########.fr       */
+/*   Updated: 2021/04/10 23:03:55 by abrabant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,16 +68,17 @@ void	module_ft_write(t_module *module)
 
 		/* perform a diff to check if files are identical */
 		snprintf(syscmd, 50, "diff -u .tmp .tmp2 > log/%ld.write.diff", i);
-		if (system(syscmd) != 0)
+		int diffret;
+		if ((diffret = system(syscmd)) != 0)
 			smash(module, "DIFF RETURNED NON-ZERO, WRITE DIFFERS:\n .diff file has been outputed to log/%ld.write.diff", i);
 		/* dirty trick to remove the diff file easily if there's no error */
 		else
 		{
 			snprintf(syscmd, 50, "log/%ld.write.diff", i);
 			remove(syscmd);
-			if (actual_errno == expected_errno)
-				module->passed++;
 		}
+		if (smash_assert_reg(module) && diffret == 0 && expected_errno == actual_errno)
+			module->passed++;
 		module->tested++;
 	}
 	close(actual_fd);
