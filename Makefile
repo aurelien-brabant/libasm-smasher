@@ -1,3 +1,5 @@
+LIBASM_PATH	= ../libasm
+
 NASM		= nasm
 ASM_FLAGS	= -felf64 -g
 LD			= clang -g 
@@ -16,6 +18,7 @@ TARGET		= smasher
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
+	make -C $(LIBASM_PATH)
 	$(LD) $(OBJS) $(LD_FLAGS) -o $(TARGET)
 
 clean:
