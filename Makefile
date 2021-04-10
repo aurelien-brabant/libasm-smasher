@@ -6,7 +6,8 @@ CFLAGS		= -Wall -Werror -Wextra
 RM			= /bin/rm -rf 
 
 SRCS		= $(addprefix src/, test_unpreserved.s check_reg.s main.c assert.c	\
-				module_ft_strlen.c module_ft_strcmp.c module_ft_strcpy.c)
+				module_ft_strlen.c module_ft_strcmp.c module_ft_strcpy.c		\
+				module_ft_strdup.c)
 TMP			= $(SRCS:%.c=%.o)
 OBJS		= $(TMP:%.s=%.o)
 TARGET		= smasher

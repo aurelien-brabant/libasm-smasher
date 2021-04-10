@@ -6,7 +6,7 @@
 /*   By: abrabant <abrabant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 12:16:04 by abrabant          #+#    #+#             */
-/*   Updated: 2021/04/10 13:54:44 by abrabant         ###   ########.fr       */
+/*   Updated: 2021/04/10 14:43:30 by abrabant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ int	main(void)
 			0, 0, 0
 		},
 		{
+			"ft_strdup",
+			module_ft_strdup,
+			0, 0, 0
+		},
+		{
 			NULL,
 			NULL,
 			0, 0, 0
@@ -53,7 +58,7 @@ int	main(void)
 	puts("\n############### \033[1;33mSMASHER SUMMARY \033[0m###############");
 	printf("MODULES: %ld/%ld passed.\n", modules_passed, i);
 	if (modules_passed == i)
-		puts("\033[0;32mYour libasm passed all the modules, congrats :D !\n");
+		puts("\033[0;32mYour libasm passed all the modules, congrats :D !\033[0m\n");
 	else
-		puts("\033[0;31mIt seems that your libasm will need a little bit of additional work! Keep it up!\n");
+		puts("\033[0;31mIt seems that your libasm will need a little bit of additional work! Keep it up!\033[0m\n");
 }
