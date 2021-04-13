@@ -29,6 +29,10 @@ fclean: clean
 
 re: fclean all
 
+test: all
+	./smasher
+	@$(RM) ./smasher
+
 %.o: %.s
 	$(NASM) $(ASM_FLAGS) $< -o $@
 

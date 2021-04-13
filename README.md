@@ -19,15 +19,39 @@ the assembly code respects the most fundamental aspects of the
 
 ## Run
 
+### Using docker
+
+You can replicate a faithul 42 virtual machine test environment by building the docker image which
+is provided.
+
+1) Build the image
+```bash
+docker build -t abrabant/libasm-smasher .
+```
+
+2) Run a container based on the built image
+```bash
+docker run -t -v /path/to/libasm:/libasm abrabant/libasm-smasher
+```
+You need to bind your libasm repository to `/libasm` in the docker container
+for the tester to work.
+
+### On your own linux system
+
 You can copy paste the following command, assuming that you're at the root of your
 `libasm`'s repository:
 
 ```bash
-git clone https://github.com/aurelien-brabant/libasm-smasher && cd libasm-smasher && make && ./smasher
+git clone https://github.com/aurelien-brabant/libasm-smasher && make test -C libasm-smasher 
 ```
 If you want to specify another path for your `libasm`, feel free to `make` the smasher
 using the `make LIBASM_PATH=path/to/your/libasm` syntax. It will override the default
 value of the Makefile's variable `LIBASM_PATH`.
+
+**Note:** your code is supposed to be compiled using `clang-9`. If you're compiling
+using `gcc` with a shell alias to clang, **this will not work and use the real gcc instead**.
+A convenient way to circumvent that is to use the docker image which ships with the perfect
+test environment and aliases.
 
 ## Features
 
