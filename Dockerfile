@@ -1,6 +1,6 @@
 FROM	ubuntu:18.04
  
-RUN		apt update -y && apt upgrade -y && apt install -y	\
+RUN		apt-get update -y && apt-get upgrade -y && apt-get install -y	\
 											nasm			\
 											clang-9			\
 											make
