@@ -14,12 +14,18 @@ SRCS		= $(addprefix src/, check_reg.s main.c assert.c						\
 TMP			= $(SRCS:%.c=%.o)
 OBJS		= $(TMP:%.s=%.o)
 TARGET		= smasher
+TARGET_BONUS  = smasher.bonus
 
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
-	make -C $(LIBASM_PATH)
+	make re -C $(LIBASM_PATH)
 	$(LD) $(OBJS) $(LD_FLAGS) -o $(TARGET)
+
+$(TARGET_BONUS): $(OBJS)
+	make fclean -C $(LIBASM_PATH)
+	make bonus -C $(LIBASM_PATH)
+	$(LD) $(OBJS) $(LD_FLAGS) -o $(TARGET_BONUS)
 
 clean:
 	$(RM) $(OBJS)
