@@ -8,21 +8,28 @@ Many tests are performed to ensure that functions work properly and that
 the assembly code respects the most fundamental aspects of the
 [System V AMD64 ABI](https://en.wikipedia.org/wiki/X86_calling_conventions#System_V_AMD64_ABI) calling convention.
 
-## Requirements
-
 **This tester will not work on MacOS, you need to have an operating system running on the linux kernel**.
 
-- A GNU/Linux based operating system (tested on Gentoo and Xubuntu 18.04, but it should work on any distribution).
-- The `clang` C compiler
-- The `nasm` ASM compiler
-- The `make` build utility
+# Run
 
-## Run
+## Using docker
 
-### Using docker
+### Fetch image from DockerHub (recommended)
 
-You can replicate a faithul 42 virtual machine test environment by building the docker image which
-is provided.
+You can simply perform a `docker run` command and it will automatically fetch the
+`aurelienbrabant/libasm-smasher` image from DockerHub:
+
+```bash
+docker run -t -v/path/to/libasm:/libasm aurelienbrabant/libasm-smasher
+```
+
+Download can take more than a minute if you don't have the `ubuntu:18.04`
+cached locally, depending on the speed of your internet connection.
+
+### Build image locally 
+
+If you don't have an internet connection or just want to build the image directly,
+follow these steps:
 
 1) Build the image
 ```bash
@@ -36,7 +43,16 @@ docker run -t -v /path/to/libasm:/libasm abrabant/libasm-smasher
 You need to bind your libasm repository to `/libasm` in the docker container
 for the tester to work.
 
-### On your own linux system
+## On your own linux system
+
+### Requirements
+
+- A GNU/Linux based operating system (tested on Gentoo and Xubuntu 18.04, but it should work on any distribution).
+- The `clang` C compiler
+- The `nasm` ASM compiler
+- The `make` build utility
+
+### Run libasm-smasher on your linux system
 
 You can copy paste the following command, assuming that you're at the root of your
 `libasm`'s repository:
@@ -53,15 +69,15 @@ using `gcc` with a shell alias to clang, **this will not work and use the real g
 A convenient way to circumvent that is to use the docker image which ships with the perfect
 test environment and aliases.
 
-## Features
+# Features
 
 - Complete test modules for mandatory part (`ft_write`, `ft_read`, `ft_strcpy`, `ft_strdup`, `ft_strcmp`, `ft_strlen`).
 - The tester checks if callee saved registers are well restored (except `rbp`), as specified by the calling convention.
 - Comprehensive logging of errors (error messages and/or diff files for some tests with large outputs such as read tests).
 
-**Note**: Bonus part is not covered BUT coverage will probably come soon. 
+**Note**: Bonus part is not covered yet, but I'm currently working on it when I've time. 
 
-## Troubleshooting
+# Troubleshooting
 
 > Segfault when running the tester
 
