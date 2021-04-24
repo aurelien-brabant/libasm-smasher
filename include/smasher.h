@@ -6,7 +6,7 @@
 /*   By: abrabant <abrabant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 09:06:20 by abrabant          #+#    #+#             */
-/*   Updated: 2021/04/10 22:04:12 by abrabant         ###   ########.fr       */
+/*   Updated: 2021/04/24 17:28:00 by abrabant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void	module_ft_strdup(t_module *module);
 void	module_ft_read(t_module *module);
 void	module_ft_write(t_module *module);
 
+void	module_ft_atoi_base(t_module *module);
+
 /* libasm prototypes */
 int		ft_write(int fd, const void *buf, size_t n);
 int		ft_read(int fd, void *buf, size_t n);
@@ -58,5 +60,6 @@ int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strcpy(char *dst, const char *src);
 char	*ft_strdup(const char *s);
 size_t	ft_strlen(const char *s);
+int		ft_atoi_base(const char *s, const char *base);
 
 # endif
