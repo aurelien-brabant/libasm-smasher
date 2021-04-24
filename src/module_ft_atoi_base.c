@@ -1,3 +1,4 @@
+#include <limits.h>
 #include "smasher.h"
 
 void	module_ft_atoi_base(t_module *module)
@@ -9,11 +10,15 @@ void	module_ft_atoi_base(t_module *module)
 		{ "ff", "0123456789abcdef"},
 		{ "         \t\v\r  7    ", "012345678" },
 		{ "\v\v\v\v\t\t\t\r\r\r\r\r   \r\v\r10000000", "01" },
-		{ "12", "01234567889" },
+		{ "+--12", "01234567889" },
 		{ "1", "1" },
+		// INT_MAX in octal
+		{ "17777777777", "01234567" },
+		// INT_MIN in binary
+		{ "\v\r   \t\v-+-+-++++++++10000000000000000000000000000000", "01" }
 	};
 	int	expected[] = {
-		123, 15, 15, 255, 7, 128, 0, 0
+		123, 15, 15, 255, 7, 128, 0, 0, INT_MAX, INT_MIN
 	};
 	size_t	size = sizeof (args) / (sizeof (char *) * 2);
 
