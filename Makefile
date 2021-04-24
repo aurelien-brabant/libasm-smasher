@@ -35,10 +35,18 @@ $(TARGET_BONUS): $(OBJS) $(BSRCS:%.c=%.o) src/main_bonus.o
 clean:
 	$(RM) $(OBJS)
 
+cleanbonus: clean
+	$(RM) $(BOBJS)
+
 fclean: clean
 	$(RM) $(TARGET)
 
-re: fclean all
+fcleanbonus: cleanbonus
+	$(RM) $(TARGET_BONUS)
+
+re: fclean $(TARGET)
+
+rebonus: fcleanbonus $(TARGET_BONUS)
 
 test: all
 	./smasher
