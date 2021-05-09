@@ -23,8 +23,12 @@ You can simply perform a `docker run` command and it will automatically fetch th
 docker run -t -v/path/to/libasm:/libasm aurelienbrabant/libasm-smasher
 ```
 
-Download can take more than a minute if you don't have the `ubuntu:18.04`
-cached locally, depending on the speed of your internet connection.
+**NOTE:** to bind your libasm to the docker container, you must use an absolute
+path. Assuming that your libasm is in your home directory, it would look like that:
+`-v$HOME/libasm:/libasm`.
+
+To fit defense requirements, the container is using the `ubuntu 18.04` as of today, so pulling the image
+can take some time, be patient.
 
 ### Build image locally 
 
